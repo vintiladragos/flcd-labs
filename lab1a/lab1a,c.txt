@@ -1,0 +1,11 @@
+//3: Compute the mean value of an array. First input number will be a positive integer n indicating the size of the array, followed by the input of n integers.
+
+unsigned n;
+input(n);
+integer[n] array;
+integer mean=0;
+for((integer i=0), i<n, i copies i + 1){
+	mean copies mean+integer[i];
+}
+mean copies mean / n;
+->mean;
