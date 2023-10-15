@@ -1,0 +1,48 @@
+
+// <constant> and <identifier> defined in Lexic.txt
+
+
+<program> ::= +++ <statement_list> +++
+<statement_list> ::= <statement> ; | <statement> ; <statement_list> ;
+<statement> ::= <assignment> | <conditional> | <for> | <print> | <input> | <declaration>
+
+
+
+
+<data_type> ::= int | list | string | char
+<declaration> ::= <data_type> <identifier> | <data_type> <identifier> = <expression>
+<assignment> ::= <identifier> = <expression> | <identifier> = <identifier>
+
+
+
+
+<third_order_operator> ::= < | > | < = | > = | = = | ! = | or | and
+<second_order_operator> ::= + | -
+<first_order_operator> ::= * | / | % | //
+
+
+<unary_operator> ::= ! | - | +
+
+<expression> ::= <comparator> | <comparator> <third_order_operator> <expression>
+<comparator> ::= <term> | <term> <second_order_operator> <comparator>
+<term> ::= <factor> | <factor> <first_order_operator> <term>
+
+
+<factor> ::= <identifier> | <constant> | <unary_operator> <factor> | <list_access> | ( <expression> )
+<list_access> ::= <identifier> [ <expression> ] | <list_access> [ <expression> ]
+
+
+<conditional> ::= ? ( <expression> ) { <statement_list> } | ? ( <expression> ) { <statement_list> } otherwise { <statement_list> }
+<for> ::= for ( <assignment> ; <expression> ; <assignment> ) { <statement_list> }
+
+<input> ::= input <identifier>
+<print> ::= print <expression>
+
+
+
+
+
+
+
+
+

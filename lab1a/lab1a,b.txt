@@ -1,8 +1,0 @@
-//2:Compute the sum of 2 numbers given as input and print them on the screen
-
-integer a, b, sum;
-input(a, integer);
-input(b, integer);
-sum copies (a + b);
-
-->sum;

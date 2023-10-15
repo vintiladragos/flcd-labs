@@ -1,0 +1,44 @@
+Alphabet:
+    Upper (A-Z) and lower case letters (a-z) of the English alphabet
+    Underline character '_'
+    Decimal digits (0-9)
+
+
+
+
+    <letter> ::= a | b | c | ... | z | A | B | C | ... | Z | _
+    <digit> ::= 0 | 1 | 2 | ... | 9
+    <identifier> ::= <letter> | <identifier> <letter> | <identifier> <digit>
+
+
+    The first character of an identifier cannot be a digit.
+    The underscore '_' is treated as a letter.
+
+1. Lexic:
+    a. Special symbols:
+     -operators +, -, *, /, //, =, <, >, <=, >=, ==, !=, !, %, and, or
+     -separators (, ), {, }, [, ], ,, ;, :, ., space, ///
+     -reserved words:list, ?, otherwise, for, int, string, input, print
+    b. Identifiers:
+    <identifier> ::= <letter> | <identifier> <letter> | <identifier> <digit>
+    <letter> ::= a | b | c | ... | z | A | B | C | ... | Z | _
+    <digit> ::= 0 | 1 | 2 | ... | 9
+
+    c. Constants:
+    <constant> ::= <const_int> | <const_string> | <const_list>
+
+    <const_int> ::= <digit> | <const_int> <digit>
+
+    <const_string> ::= "<char_sequence>" | ""
+    <char_sequence> ::= <char> | <char_sequence> <char>
+
+    <const_char> ::= '<char>'
+    <char> ::= <letter> | <digit>
+
+    <const_list> ::= [ <const_sequence> ] | []
+    <const_sequence> ::= <constant> | <const_sequence> , <constant>
+
+
+
+
+

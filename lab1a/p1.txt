@@ -1,0 +1,19 @@
+///1:Compute the minimum of 3 integers given as input and print them on the screen
++++
+int a;
+int b;
+int c;
+input a;
+input b;
+input c;
+int minimum;
+
+?(a > b) {minimum = b;}
+otherwise {minimum = a;};
+?(c < minimum) {minimum = c;};
+
+print minimum;
+
+
+
++++
