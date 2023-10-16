@@ -6,6 +6,9 @@ list array;
 int mean=0;
 int i;
 for(i=0; i<n; i = i + 1){
+input array[i];
+};
+for(i=0; i<n; i = i + 1){
 	mean = mean+array[i];
 };
 mean = mean / n;
