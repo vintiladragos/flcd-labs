@@ -27,8 +27,10 @@ Alphabet:
     c. Constants:
     <constant> ::= <const_int> | <const_string> | <const_list>
 
-    <const_int> ::= <digit> | <const_int> <digit>
+    <numbersequence> ::= <digit> | <const_int> <digit>
 
+    <const_int> ::= <numbersequence> | - <numbersequence>
+    
     <const_string> ::= "<char_sequence>" | ""
     <char_sequence> ::= <char> | <char_sequence> <char>
 
