@@ -11,9 +11,9 @@
 
 <data_type> ::= int | list | string | char
 <declaration> ::= <data_type> <identifier> | <data_type> <identifier> = <expression>
-<assignment> ::= <list_access> = <expression> | <identifier> = <expression>
+<assignment> ::= <reference> = <expression>
 
-
+<reference> ::= <identifier> | <list_access>
 
 
 <third_order_operator> ::= < | > | < = | > = | = = | ! = | or | and
@@ -28,14 +28,14 @@
 <term> ::= <factor> | <factor> <first_order_operator> <term>
 
 
-<factor> ::= <identifier> | <constant> | <unary_operator> <factor> | <list_access> | ( <expression> )
+<factor> ::= <reference> | <constant> | <unary_operator> <factor> | ( <expression> )
 <list_access> ::= <identifier> [ <expression> ] | <list_access> [ <expression> ]
 
 
 <conditional> ::= ? ( <expression> ) { <statement_list> } | ? ( <expression> ) { <statement_list> } otherwise { <statement_list> }
 <for> ::= for ( <assignment> ; <expression> ; <assignment> ) { <statement_list> }
 
-<input> ::= input <identifier>
+<input> ::= input <reference>
 <print> ::= print <expression>
 
 
