@@ -1,0 +1,25 @@
+start
+puts("Give me a natural number");
+int a;
+a = to_i(cuts(gets())); /// cuts is defined as a reserved word, and yet no syntax has been provided for it. to_i is neither a reserved word nor defined in the syntax.
+
+puts("Give me another natural number");
+int b;
+b = to_i(cuts(gets())); /// cuts is defined as a reserved word, and yet no syntax has been provided for it. to_i is neither a reserved word nor defined in the syntax.
+
+if a < b
+    int aux;
+    aux = a;
+    a = b;
+    b = aux; ///this is a statement_list, which makes the <if_statement> not match this block of code, as it is defined as if <condition> <statement>. Additionally, by the definition provided for <if_statement>, every if statement must have an elif and an else clause, which is not present here.
+end /// since this is part of a <statement_list>, by its definition, every statement must end with a semicolon.
+
+while b != 0 do
+    int aux;
+    aux = b;
+    b = a % b;
+    a = aux; /// this is a statement_list, which makes the <while_statement> not match this block of code: "while <condition> do <statement> end". This can also match <compound_statement>, which does define a <statement_list>, although not in the context of a while statement, which is structurally defined to contain a single <statement>. A possible solution would be to define a <while_statement> ::= while <condition> <compound_statement>, if the preferred structure is the one written.
+end /// missing semicolon, same as the end above
+
+puts(`The GCD of the given numbers is #{a}`); /// the backticks are not defined in the syntax, and the #{} is not defined in the syntax either.
+stop

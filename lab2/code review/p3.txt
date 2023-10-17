@@ -1,0 +1,15 @@
+start
+array<int> arr;
+arr = [3, 1, 10, 4, -6, 12, 4, 2, -4]; /// there is no definition for this list/array structure constant.
+
+int max;
+max = array.length ? array[0] : nil; /// ? is not defined an identifier/token/reserved word. This conditional structure is not defined. array.length is not defined as anything in the syntax.
+
+for number in array do ///
+	if number > max
+		max = number;
+	end /// by syntax definition, every <if_statement> must have elif and else.
+end /// by the syntax definition, semicolon is required here.
+
+puts(max);
+stop

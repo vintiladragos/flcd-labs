@@ -1,0 +1,18 @@
+start
+puts("Give me a natural number");
+int input_number;
+input_number = to_i(cuts(gets())); /// cuts is defined as a reserved word, and yet no syntax has been provided for it. to_i is neither a reserved word nor defined in the syntax.
+
+bool is_prime;
+is_prime = true; /// although "true" is a reserved token, the bool const type has not been defined
+
+int number;
+number = 2;
+while number < input_number/2 do
+	if !(input_number % number)
+		is_prime = false;
+		break;
+	end ///by the definition provided for <if_statement>, every if statement must have an elif and an else clause.
+end /// since this is part of a <statement_list>, by its definition, every statement must end with a semicolon.
+puts(is_prime);
+stop
