@@ -1,4 +1,4 @@
-///1:Compute the minimum of 3 integers given as input and print them on the screen
+# 1:Compute the minimum of 3 integers given as input and print them on the screen
 +++
 int a;
 int b;
@@ -6,8 +6,8 @@ int c;
 input a;
 input b;
 input c;
-int m!inimum;
-
+int minimum;
+"
 $$$$
 ?(a > b) {minimum = b;}
 otherwise {minimum = a;};
@@ -20,5 +20,5 @@ print minimum;
 +++
 
 
-///"!" is an illegal character in the definition of an identifier.
-///"$" is not a valid token in the language.
+# " is a double quote that is not closed. undefined behavior.
+# "$" is not a valid token in the language.

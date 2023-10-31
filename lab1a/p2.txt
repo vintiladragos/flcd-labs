@@ -1,5 +1,5 @@
-///2:Compute the sum of 2 numbers given as input and print them on the screen
-+++
+# 2:Compute the sum of 2 numbers given as input and print them on the screen
+
 int a;
 int b;
 int sum;
@@ -9,4 +9,3 @@ sum = (a + b);
 
 print sum;
 
-+++

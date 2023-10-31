@@ -12,15 +12,15 @@ print
 +
 -
 *
-/
 //
-=
-<
->
+/
 <=
 >=
 ==
 !=
+=
+<
+>
 !
 %
 and
@@ -34,11 +34,3 @@ or
 }
 [
 ]
-
-#identifiers and constants
-<identifier>
-<const_string>
-<const_int>
-<const_char>
-<const_list>
-<constant>

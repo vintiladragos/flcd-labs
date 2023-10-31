@@ -1,5 +1,5 @@
-///3: Compute the mean value of an array. First input number will be a positive integer n indicating the size of the array, followed by the input of n integers.
-+++
+# 3: Compute the mean value of an array. First input number will be a positive integer n indicating the size of the array, followed by the input of n integers.
+
 unsigned n;
 input n;
 list array;
@@ -8,9 +8,6 @@ int i;
 for(i=0; i<n; i = i + 1){
 input array[i];
 };
-for(i=0; i<n; i = i + 1){
-	mean = mean+array[i];
-};
+for(i=0;i<n;i=i+1){mean=mean+array[i];};
 mean = mean / n;
 print mean;
-+++

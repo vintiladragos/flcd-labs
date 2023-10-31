@@ -2,6 +2,7 @@ class SymbolTable:
     def __init__(self, size=35000):
         self.table = [None] * size
         self.size = size
+        self.count = 0
 
     def hash(self, key):
         """
@@ -19,17 +20,19 @@ class SymbolTable:
         """
         :param key: Symbol to be inserted
         :param value: Value of the symbol
-        :return: True if inserted, False if already exists
+        :return: True if inserted, its value if already exists
         """
         index = self.hash(key)
         if self.table[index] is None:
             self.table[index] = [(key, value)]
+            self.count += 1
             return True
         else:
-            for list_key, _ in self.table[index]:
+            for list_key, list_value in self.table[index]:
                 if list_key == key:
-                    return False
+                    return list_value
             self.table[index].append((key, value))
+            self.count += 1
             return True
 
     def lookup(self, key):
@@ -61,3 +64,10 @@ class SymbolTable:
                     return value
             return None
 
+    def __str__(self):
+        result = ""
+        for i in range(self.size):
+            if self.table[i] is not None:
+                for key, value in self.table[i]:
+                    result += f"{key} -> {value}\n"
+        return result

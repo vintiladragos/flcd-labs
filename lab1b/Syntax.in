@@ -2,7 +2,7 @@
 // <constant> and <identifier> defined in Lexic.txt
 
 
-<program> ::= +++ <statement_list> +++
+
 <statement_list> ::= <statement> ; | <statement> ; <statement_list>
 <statement> ::= <assignment> | <conditional> | <for> | <print> | <input> | <declaration>
 
