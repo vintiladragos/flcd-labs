@@ -1,6 +1,6 @@
 # 3: Compute the mean value of an array. First input number will be a positive integer n indicating the size of the array, followed by the input of n integers.
 
-unsigned n;
+int n;
 input n;
 list array;
 int mean=0;
