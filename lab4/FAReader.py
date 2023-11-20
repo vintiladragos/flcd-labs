@@ -3,7 +3,7 @@ from tkinter import messagebox
 
 
 class FAReader:
-    def __init__(self,input_filepath):
+    def __init__(self, input_filepath):
         self.__input_filepath = input_filepath
         with open(input_filepath, 'r') as file:
             if file.readline() != "#States\n":
@@ -76,8 +76,6 @@ class FAReader:
         else:
             return "Did not get to a final state"
 
-
-    # getters
     def get_states(self):
         return self.__states
 
@@ -96,21 +94,37 @@ class FAReader:
     def get_input_filepath(self):
         return self.__input_filepath
 
+
 root = tk.Tk()
 root.title("Finite Automaton Display")
 
-# Function to load the FA from a file
+
 fa_reader = None
+
+
 def load_fa():
     file_path = entry_filepath.get()
     try:
         global fa_reader
         fa_reader = FAReader(file_path)
-        display_states.config(text=f"States: {', '.join(fa_reader.get_states())}")
-        display_alphabet.config(text=f"Alphabet: {', '.join(fa_reader.get_alphabet())}")
-        display_transitions.config(text="Transitions:\n" + "\n".join([f"{state} -> {letter} -> {', '.join(transitions)}" for state in fa_reader.get_transitions() for letter, transitions in fa_reader.get_transitions()[state].items()]))
-        display_initial_state.config(text=f"Initial State: {fa_reader.get_initial_state()}")
-        display_final_states.config(text=f"Final States: {', '.join(fa_reader.get_final_states())}")
+        states_txt = f"States:\n{', '.join(fa_reader.get_states())}"
+        alphabet_txt = f"Alphabet:\n{', '.join(fa_reader.get_alphabet())}"
+        transitions_txt = "Transitions:\n" + "\n".join(
+            [f"{state} -> {letter} -> {', '.join(transitions)}" for state in fa_reader.get_transitions() for
+             letter, transitions in fa_reader.get_transitions()[state].items()])
+        initial_state_txt = f"Initial State:\n{fa_reader.get_initial_state()}"
+        final_states_txt = f"Final States:\n{', '.join(fa_reader.get_final_states())}"
+
+        menu_bar = tk.Menu(root)
+        root.config(menu=menu_bar)
+        display_menu = tk.Menu(menu_bar, tearoff=0)
+        menu_bar.add_cascade(label="Display", menu=display_menu)
+        display_menu.add_command(label="States", command=lambda: display_fa_info.config(text=states_txt))
+        display_menu.add_command(label="Alphabet", command=lambda: display_fa_info.config(text=alphabet_txt))
+        display_menu.add_command(label="Transitions", command=lambda: display_fa_info.config(text=transitions_txt))
+        display_menu.add_command(label="Initial State", command=lambda: display_fa_info.config(text=initial_state_txt))
+        display_menu.add_command(label="Final States", command=lambda: display_fa_info.config(text=final_states_txt))
+
         if fa_reader.is_dfa():
             display_is_dfa.config(text="Is DFA: Yes")
         else:
@@ -118,6 +132,7 @@ def load_fa():
 
     except Exception as e:
         messagebox.showerror("Error", str(e))
+
 
 # Create and place widgets
 label_filepath = tk.Label(root, text="File Path:")
@@ -129,20 +144,8 @@ entry_filepath.grid(row=0, column=1, padx=5, pady=5)
 button_load = tk.Button(root, text="Load FA", command=load_fa)
 button_load.grid(row=0, column=2, padx=5, pady=5)
 
-display_states = tk.Label(root, text="States: ")
-display_states.grid(row=1, column=0, columnspan=3, padx=5, pady=5)
-
-display_alphabet = tk.Label(root, text="Alphabet: ")
-display_alphabet.grid(row=2, column=0, columnspan=3, padx=5, pady=5)
-
-display_transitions = tk.Label(root, text="Transitions: ")
-display_transitions.grid(row=3, column=0, columnspan=3, padx=5, pady=5)
-
-display_initial_state = tk.Label(root, text="Initial State: ")
-display_initial_state.grid(row=4, column=0, columnspan=3, padx=5, pady=5)
-
-display_final_states = tk.Label(root, text="Final States: ")
-display_final_states.grid(row=5, column=0, columnspan=3, padx=5, pady=5)
+display_fa_info = tk.Label(root, text="\n")
+display_fa_info.grid(row=1, column=0, columnspan=3, padx=5, pady=5)
 
 display_is_dfa = tk.Label(root, text="Is DFA: ")
 display_is_dfa.grid(row=6, column=0, columnspan=3, padx=5, pady=5)
@@ -155,9 +158,12 @@ entry_sequence.grid(row=7, column=1, padx=5, pady=5)
 
 display_accepted_result = tk.Label(root, text="")
 display_accepted_result.grid(row=8, column=0, columnspan=3, padx=5, pady=5)
+
+
 # Function to check if a sequence is accepted by the FA
+
+
 def check_sequence():
-    file_path = entry_filepath.get()
     try:
         if fa_reader is None:
             raise Exception("Please load a FA first")
@@ -167,10 +173,9 @@ def check_sequence():
     except Exception as e:
         messagebox.showerror("Error", str(e))
 
+
 button_check = tk.Button(root, text="Check Sequence", command=check_sequence)
 button_check.grid(row=7, column=2, padx=5, pady=5)
-
-
 
 # Run the Tkinter event loop
 root.mainloop()
