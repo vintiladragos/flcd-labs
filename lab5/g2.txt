@@ -1,39 +1,26 @@
-
-# <constant> and <identifier> defined in Lexic.txt
-
-
+#Nonterminals
+<statement_list> <statement> <assignment> <conditional> <for> <print> <input> <declaration> <data_type> <declaration> <expression> <reference> <list_access> <third_order_operator> <second_order_operator> <first_order_operator> <unary_operator> <comparator> <term> <factor>
+#Terminals
+< > <= >= == != = or and + - * / % // ! - + ; [ ] ( ) ? { } int list char string for otherwise input print <identifier> <constant>
+#Productions
 <statement_list> ::= <statement> ; | <statement> ; <statement_list>
 <statement> ::= <assignment> | <conditional> | <for> | <print> | <input> | <declaration>
-
-
-
-
 <data_type> ::= int | list | string | char
 <declaration> ::= <data_type> <identifier> | <data_type> <identifier> = <expression>
 <assignment> ::= <reference> = <expression>
-
 <reference> ::= <identifier> | <list_access>
-
-
 <third_order_operator> ::= < | > | < = | > = | = = | ! = | or | and
 <second_order_operator> ::= + | -
 <first_order_operator> ::= * | / | % | //
-
-
 <unary_operator> ::= ! | - | +
-
 <expression> ::= <comparator> | <comparator> <third_order_operator> <expression>
 <comparator> ::= <term> | <term> <second_order_operator> <comparator>
 <term> ::= <factor> | <factor> <first_order_operator> <term>
-
-
 <factor> ::= <reference> | <constant> | <unary_operator> <factor> | ( <expression> )
 <list_access> ::= <identifier> [ <expression> ] | <list_access> [ <expression> ]
-
-
 <conditional> ::= ? ( <expression> ) { <statement_list> } | ? ( <expression> ) { <statement_list> } otherwise { <statement_list> }
 <for> ::= for ( <assignment> ; <expression> ; <assignment> ) { <statement_list> }
-
 <input> ::= input <reference>
 <print> ::= print <expression>
-
+#StartSymbol
+<statement_list>

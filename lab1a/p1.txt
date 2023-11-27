@@ -13,4 +13,3 @@ otherwise {minimum = a;};
 ?(c < minimum) {minimum = c;};
 
 print minimum;
-

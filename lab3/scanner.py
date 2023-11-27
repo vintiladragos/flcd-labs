@@ -53,6 +53,7 @@ class Scanner:
                 for token in token_pattern.findall(line):
                     actual_token = token[0]
                     remaining_line = remaining_line.replace(actual_token, '', 1)
+                    print(remaining_line)
                     # if the token is a reserved word, operator, or separator
                     if re.match(self.__reserved_words_regex, actual_token) or re.match(self.__operators_regex, actual_token) or re.match(self.__separators_regex, actual_token):
                         if actual_token != ' ':

@@ -3,6 +3,48 @@ from tkinter import messagebox
 
 
 class FAReader:
+    """
+    Documentation:
+        The FAReader class is used to read a finite automaton from a file and check if a sequence is accepted by the FA.
+        The file format is as follows (example):
+            #States
+            Q0 Q1 Q2
+            #Alphabet
+            0 1
+            #Transitions
+            Q0 0 Q1
+            Q0 1 Q0
+            Q1 0 Q2
+            Q1 1 Q0
+            Q2 0 Q2
+            Q2 1 Q2
+            #Initial State
+            Q0
+            #Final States
+            Q2
+        __init__(self, input_filepath):
+            Reads the FA from the input file
+            :param input_filepath: The path to the input file
+        is_dfa(self):
+            Checks if the FA is deterministic
+            :return: True if the FA is deterministic, False otherwise
+        accept_sequence(self, sequence):
+            Checks if a sequence is accepted by the FA
+            :param sequence: The sequence to be checked
+            :return: "Accepted" if the sequence is accepted, the reason why it is not accepted otherwise
+        get_states(self):
+            :return: The states of the FA. Format: List[state1, state2, ...]
+        get_alphabet(self):
+            :return: The alphabet of the FA. Format: List[letter1, letter2, ...]
+        get_transitions(self):
+            :return: The transitions of the FA. Format: Dict[from_state][letter] = List[to_state1, to_state2, ...]
+        get_initial_state(self):
+            :return: The initial state of the FA. Format: String
+        get_final_states(self):
+            :return: The final states of the FA. Format: List[state1, state2, ...]
+        get_input_filepath(self):
+            :return: The path to the input file. Format: String
+    """
     def __init__(self, input_filepath):
         self.__input_filepath = input_filepath
         with open(input_filepath, 'r') as file:

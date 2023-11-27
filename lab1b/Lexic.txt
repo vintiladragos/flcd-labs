@@ -17,7 +17,7 @@ Alphabet:
 1. Lexic:
     a. Special symbols:
      -operators +, -, *, /, //, =, <, >, <=, >=, ==, !=, !, %, and, or
-     -separators (, ), {, }, [, ], ,, ;, :, ., space, ///
+     -separators (, ), {, }, [, ], ,, ;, :, ., space
      -reserved words:list, ?, otherwise, for, int, string, input, print
     b. Identifiers:
     <identifier> ::= <letter> | <identifier> <letter> | <identifier> <digit>

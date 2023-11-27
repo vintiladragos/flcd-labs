@@ -29,7 +29,7 @@ the rule is:
 	<starting_of_identifier> ::= <letter>|_
 	<available_characters> :: <letter>|<digit>|_
 	<string> ::= <available_characters>|<available_characters><string>
-	<identifier> ::= <starting_of_identifier><string> /// This does not allow identifiers of a single character. I would recommend the definition: <identifier> ::= <starting_of_identifier>|<starting_of_identifier><string>
+	<identifier> ::= <starting_of_identifier><string> # This does not allow identifiers of a single character. I would recommend the definition: <identifier> ::= <starting_of_identifier>|<starting_of_identifier><string>
 
 c.constants
 
