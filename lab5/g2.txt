@@ -1,4 +1,4 @@
-#Nonterminals
+#Non-terminals
 <statement_list> <statement> <assignment> <conditional> <for> <print> <input> <declaration> <data_type> <declaration> <expression> <reference> <list_access> <third_order_operator> <second_order_operator> <first_order_operator> <unary_operator> <comparator> <term> <factor>
 #Terminals
 < > <= >= == != = or and + - * / % // ! - + ; [ ] ( ) ? { } int list char string for otherwise input print <identifier> <constant>

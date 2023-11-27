@@ -1,4 +1,4 @@
-#Nonterminals
+#Non-terminals
 S C
 #Terminals
 a b
