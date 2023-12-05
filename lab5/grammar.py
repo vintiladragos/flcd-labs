@@ -14,7 +14,6 @@ class Grammar:
     """
 
     EPSILON = "epsilon"
-
     def __init__(self, filename):
         self.__filename = filename
         self.__terminals = []
@@ -22,6 +21,9 @@ class Grammar:
         self.__productions = {}
         self.__start_symbol = None
         self.__read_grammar()
+
+    def get_start_symbol(self):
+        return self.__start_symbol
 
     def __read_grammar(self):
         """
@@ -85,7 +87,11 @@ class Grammar:
                     current_single_right = tuple(current_single_right)
                     current_right.append(current_single_right)
 
-                self.__productions[current_left] = current_right
+                if current_left in self.__productions:
+                    self.__productions[current_left].extend(current_right)
+                else:
+                    self.__productions[current_left] = current_right
+                
                 line = file.readline()
 
             start_symbol = file.readline().strip()
@@ -132,6 +138,16 @@ class Grammar:
                 return string
 
         return "No productions found for this non-terminal"
+
+    def get_list_of_productions_for_non_terminal(self, non_terminal):
+        if non_terminal not in self.__non_terminals:
+            raise Exception(f"{non_terminal} is not a non-terminal")
+
+        for left, right in self.__productions.items():
+            if left[0] == non_terminal and len(left) == 1:
+                return right
+
+        return []
 
     def __terminal_representation(self):
         return f"Terminals:\n\t{self.__terminals}\n"

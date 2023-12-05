@@ -1,7 +1,7 @@
 from grammar import Grammar
 
 if __name__ == '__main__':
-    filename = "g2.txt"
+    filename = "g1.txt"
     grammar = Grammar(filename)
 
     print(grammar)
@@ -11,5 +11,5 @@ if __name__ == '__main__':
     else:
         print("The grammar is not a Context-Free Grammar (CFG).\n")
 
-    non_terminal = "<statement>"
+    non_terminal = "C"
     print(f"Productions of the non-terminal {non_terminal}:\n\t{grammar.productions_for_non_terminal(non_terminal)}")

@@ -1,0 +1,8 @@
+#Non-terminals
+S
+#Terminals
+a b c
+#Productions
+S ::= a S b S | a S | c
+#StartSymbol
+S
