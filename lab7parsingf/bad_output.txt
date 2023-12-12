@@ -1,0 +1,12 @@
+The sequence is w = b
+(q, 1, epsilon, S)
+|- exp (q, 1, S1, a S b S)
+|- mi (b, 1, S1, a S b S)
+|- at (q, 1, S2, a S)
+|- mi (b, 1, S2, a S)
+|- at (q, 1, S3, c)
+|- mi (b, 1, S3, c)
+|- at (e, 1, epsilon, epsilon)
+Sequence is not accepted!
+
+

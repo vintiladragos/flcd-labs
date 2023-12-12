@@ -1,0 +1,83 @@
+The sequence is w = a b a b b a b b
+(q, 1, epsilon, S)
+|- exp (q, 1, S1, a C S b)
+|- adv (q, 2, S1 a, C S b)
+|- exp (q, 2, S1 a C1, S S b)
+|- exp (q, 2, S1 a C1 S1, a C S b S b)
+|- mi (b, 2, S1 a C1 S1, a C S b S b)
+|- at (q, 2, S1 a C1 S2, a b S b)
+|- mi (b, 2, S1 a C1 S2, a b S b)
+|- at (b, 2, S1 a C1, S S b)
+|- at (q, 2, S1 a C2, b S b S b)
+|- adv (q, 3, S1 a C2 b, S b S b)
+|- exp (q, 3, S1 a C2 b S1, a C S b b S b)
+|- adv (q, 4, S1 a C2 b S1 a, C S b b S b)
+|- exp (q, 4, S1 a C2 b S1 a C1, S S b b S b)
+|- exp (q, 4, S1 a C2 b S1 a C1 S1, a C S b S b b S b)
+|- mi (b, 4, S1 a C2 b S1 a C1 S1, a C S b S b b S b)
+|- at (q, 4, S1 a C2 b S1 a C1 S2, a b S b b S b)
+|- mi (b, 4, S1 a C2 b S1 a C1 S2, a b S b b S b)
+|- at (b, 4, S1 a C2 b S1 a C1, S S b b S b)
+|- at (q, 4, S1 a C2 b S1 a C2, b S b S b b S b)
+|- adv (q, 5, S1 a C2 b S1 a C2 b, S b S b b S b)
+|- exp (q, 5, S1 a C2 b S1 a C2 b S1, a C S b b S b b S b)
+|- mi (b, 5, S1 a C2 b S1 a C2 b S1, a C S b b S b b S b)
+|- at (q, 5, S1 a C2 b S1 a C2 b S2, a b b S b b S b)
+|- mi (b, 5, S1 a C2 b S1 a C2 b S2, a b b S b b S b)
+|- at (b, 5, S1 a C2 b S1 a C2 b, S b S b b S b)
+|- back (b, 4, S1 a C2 b S1 a C2, b S b S b b S b)
+|- at (b, 4, S1 a C2 b S1 a, C S b b S b)
+|- back (b, 3, S1 a C2 b S1, a C S b b S b)
+|- at (q, 3, S1 a C2 b S2, a b b S b)
+|- adv (q, 4, S1 a C2 b S2 a, b b S b)
+|- adv (q, 5, S1 a C2 b S2 a b, b S b)
+|- adv (q, 6, S1 a C2 b S2 a b b, S b)
+|- exp (q, 6, S1 a C2 b S2 a b b S1, a C S b b)
+|- adv (q, 7, S1 a C2 b S2 a b b S1 a, C S b b)
+|- exp (q, 7, S1 a C2 b S2 a b b S1 a C1, S S b b)
+|- exp (q, 7, S1 a C2 b S2 a b b S1 a C1 S1, a C S b S b b)
+|- mi (b, 7, S1 a C2 b S2 a b b S1 a C1 S1, a C S b S b b)
+|- at (q, 7, S1 a C2 b S2 a b b S1 a C1 S2, a b S b b)
+|- mi (b, 7, S1 a C2 b S2 a b b S1 a C1 S2, a b S b b)
+|- at (b, 7, S1 a C2 b S2 a b b S1 a C1, S S b b)
+|- at (q, 7, S1 a C2 b S2 a b b S1 a C2, b S b S b b)
+|- adv (q, 8, S1 a C2 b S2 a b b S1 a C2 b, S b S b b)
+|- exp (q, 8, S1 a C2 b S2 a b b S1 a C2 b S1, a C S b b S b b)
+|- mi (b, 8, S1 a C2 b S2 a b b S1 a C2 b S1, a C S b b S b b)
+|- at (q, 8, S1 a C2 b S2 a b b S1 a C2 b S2, a b b S b b)
+|- mi (b, 8, S1 a C2 b S2 a b b S1 a C2 b S2, a b b S b b)
+|- at (b, 8, S1 a C2 b S2 a b b S1 a C2 b, S b S b b)
+|- back (b, 7, S1 a C2 b S2 a b b S1 a C2, b S b S b b)
+|- at (b, 7, S1 a C2 b S2 a b b S1 a, C S b b)
+|- back (b, 6, S1 a C2 b S2 a b b S1, a C S b b)
+|- at (q, 6, S1 a C2 b S2 a b b S2, a b b)
+|- adv (q, 7, S1 a C2 b S2 a b b S2 a, b b)
+|- adv (q, 8, S1 a C2 b S2 a b b S2 a b, b)
+|- adv (q, 9, S1 a C2 b S2 a b b S2 a b b, epsilon)
+|- success (f, 9, S1 a C2 b S2 a b b S2 a b b, epsilon)
+Sequence is accepted!
+
+The table representation is:
++-------+------+--------+---------------+
+| Index | Info | Parent | Right sibling |
++=======+======+========+===============+
+| 1     | S    | 0      | 0             |
++-------+------+--------+---------------+
+| 2     | a    | 1      | 0             |
++-------+------+--------+---------------+
+| 3     | C    | 1      | 2             |
++-------+------+--------+---------------+
+| 4     | S    | 1      | 3             |
++-------+------+--------+---------------+
+| 5     | b    | 1      | 4             |
++-------+------+--------+---------------+
+| 6     | a    | 3      | 0             |
++-------+------+--------+---------------+
+| 7     | b    | 3      | 6             |
++-------+------+--------+---------------+
+| 8     | a    | 4      | 0             |
++-------+------+--------+---------------+
+| 9     | b    | 4      | 8             |
++-------+------+--------+---------------+
+
+
